@@ -2,12 +2,14 @@
 
 Como o teste não determina a ordenação é **case-sensitive**.
 
-Para rodar após baixar do git:
+Para rodar após baixar do git: (Para a substring 'SALLY' [case-insensitive])
 <pre>  
 mvn clean install
-java -Dlogging.level.root=FATAL -Dspring.main.banner-mode=log -jar target/movies-1.0.0.jar
+echo SALLY |java -Dlogging.level.root=FATAL -Dspring.main.banner-mode=log -jar target/movies-1.0.0.jar
 </pre>
 
+(Acho que por motivo de segurança a base é mudada diaramente talvez. A query acima
+funcionou em 11 de junho de 2020)
 
 **Porque o fonte está em inglês**?
 
