@@ -1,6 +1,6 @@
 # movies
 
-Como o teste não determina a busca é **case-sensitive**.
+Como o teste não determina a ordenação é **case-sensitive**.
 
 Para rodar após baixar do git:
 <pre>  
