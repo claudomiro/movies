@@ -1,8 +1,6 @@
 package org.claudomiro.interview.ibm.movies;
 
 import org.claudomiro.interview.ibm.movies.domain.MoviePage;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +17,7 @@ import java.util.Scanner;
 public class MoviesApplication {
 
 
+	private static final String BASE_URL = "https://jsonmock.hackerrank.com/api/movies/";
 
 	public static void main(String[] args) {
 		SpringApplication.run(MoviesApplication.class, args);
@@ -55,10 +54,7 @@ public class MoviesApplication {
 	}
 
 	private MoviePage getPage(RestTemplate restTemplate, String searchString, int page) {
-		return restTemplate.getForObject(
-				"https://jsonmock.hackerrank.com/api/movies/search/?Title=" +
-						searchString +
-						"&page=" +
-						page, MoviePage.class);
+		String url = String.format(BASE_URL + "search/?Title=%s&page=%d", searchString, page);
+		return restTemplate.getForObject(url, MoviePage.class);
 	}
 }
