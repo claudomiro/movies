@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>org.claudomiro.interview.ibm</groupId>
 	<artifactId>movies</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>movies</name>
 	<description>Example of REST API</description>
 
