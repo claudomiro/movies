@@ -44,7 +44,7 @@ public class MoviesApplication {
 			addTitles(titleList, getPage(restTemplate, searchString, pageNumber));
 		}
 		Collections.sort(titleList);
-		System.out.println(titleList);
+		titleList.forEach(System.out::println);
 	}
 
 	private String readStringFromStdIn() {
