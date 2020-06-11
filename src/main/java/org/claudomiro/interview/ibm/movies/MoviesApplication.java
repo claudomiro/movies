@@ -34,9 +34,7 @@ public class MoviesApplication {
 	}
 
 	private void runMovies(RestTemplate restTemplate) {
-		Scanner scanner = new Scanner(System.in);
-		String searchString = scanner.next();
-		scanner.close();
+		String searchString = readStringFromStdIn();
 
 		List<String> titleList = new ArrayList<>();
 
@@ -47,6 +45,12 @@ public class MoviesApplication {
 		}
 		Collections.sort(titleList);
 		System.out.println(titleList);
+	}
+
+	private String readStringFromStdIn() {
+		try (Scanner scanner = new Scanner(System.in)) {
+			return scanner.next();
+		}
 	}
 
 	private void addTitles(List<String> titleList, MoviePage moviePage) {
